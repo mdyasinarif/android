@@ -30,10 +30,10 @@
                 android:textSize="18sp" />
 
             <EditText
-                android:text="0"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:id="@+id/productID"
+                android:layout_width="322dp"
+                android:layout_height="wrap_content"
+                android:text="0"
                 android:textSize="18sp" />
 
         </TableRow>
@@ -118,19 +118,19 @@
              />
 
         <Button
-            android:text="Delete"
             android:id="@+id/btnDelete"
+            style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@style/Widget.AppCompat.Button.Borderless"
             android:onClick="deleteProductById"
-             />
+            android:text="Delete" />
 
         <Button
             android:text="Edit"
             android:id="@+id/btnEdit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="updateProduct"
             style="@style/Widget.AppCompat.Button.Borderless"
              />
 

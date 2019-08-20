@@ -9,10 +9,10 @@ import android.database.sqlite.SQLiteOpenHelper;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MyBbAdapter {
+public class MyDbAdapter {
     MyDbHelper helper;
 
-    public MyBbAdapter(Context context) {
+    public MyDbAdapter(Context context) {
         this.helper = new MyDbHelper(context);
     }
 
@@ -65,6 +65,16 @@ public class MyBbAdapter {
         return id;
     }
 
+    public long updateData(Product product) {
+        SQLiteDatabase db = helper.getWritableDatabase();
+        String selection = MyDbHelper.ID + " = " + product.getId();
+        ContentValues cv = new ContentValues();
+        cv.put(MyDbHelper.PRODUCT_NAME, product.getProductname());
+        cv.put(MyDbHelper.QTY, product.getQuantity());
+        long id = db.update(MyDbHelper.TABLE_NAME, cv,selection,null);
+        return id;
+    }
+
     public List<Product> getList() {
         SQLiteDatabase db = helper.getReadableDatabase();
         String[] projection = {MyDbHelper.ID,
@@ -98,6 +108,7 @@ public class MyBbAdapter {
         SQLiteDatabase db = helper.getReadableDatabase();
         String[] projection = {MyDbHelper.ID,
                 MyDbHelper.PRODUCT_NAME, MyDbHelper.QTY};
+
         String selection = MyDbHelper.ID + " = " + id;
 
         Cursor cursor = db.query(

@@ -39,7 +39,7 @@ public class ProductAdapter extends BaseAdapter {
     public View getView(int position, View view, ViewGroup viewGroup) {
         view = layoutInflater.inflate(R.layout.list,null);
         TextView pid = view.findViewById(R.id.pid);
-        TextView pname = view.findViewById(R.id.name);
+        TextView pname = view.findViewById(R.id.productName);
         TextView pqty = view.findViewById(R.id.qty);
 
         pid.setText(String.valueOf(productList.get(position).getId()));
