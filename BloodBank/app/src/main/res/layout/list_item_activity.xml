@@ -20,14 +20,14 @@
         android:id="@+id/layout">
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:id="@+id/imageView3"
-            android:layout_centerVertical="true"
-            android:layout_alignParentLeft="true"
+            android:layout_width="89dp"
+            android:layout_height="match_parent"
             android:layout_alignParentStart="true"
-            android:src="@drawable/blood_drop"
-            android:layout_marginLeft="20dp" />
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/ic_person_red" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -44,7 +44,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="John Snow"
+                android:text="Yasin Arif"
                 android:id="@+id/name"
                 android:textColor="@color/colorPrimaryDark"/>
 
@@ -53,7 +53,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Indore, Airport"
+                android:text="Dhaka, Dhaka"
                 android:id="@+id/location"/>
 
         </LinearLayout>

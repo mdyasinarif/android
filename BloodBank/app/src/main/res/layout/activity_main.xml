@@ -37,12 +37,18 @@
     </LinearLayout>
 
     <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="fill_parent"
         android:id="@+id/imageView"
-        android:src="@drawable/banner"
+        android:layout_width="match_parent"
+        android:layout_height="495dp"
+        android:layout_above="@+id/linearLayout2"
         android:layout_below="@+id/linearLayout"
-        android:layout_above="@+id/linearLayout2" />
+        android:layout_marginTop="7dp"
+        android:layout_marginBottom="-3dp"
+        android:src="@drawable/bloodbank" />
+
+
+
+
 
     <LinearLayout
         android:orientation="horizontal"

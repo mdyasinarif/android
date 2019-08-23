@@ -9,8 +9,7 @@
     android:paddingRight="16dp"
     android:paddingTop="16dp"
     tools:context=".DetailActivity"
-    android:background="@color/colorWhite"
-    >
+    android:background="@color/colorWhite">
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="wrap_content"
@@ -49,12 +48,12 @@
             android:layout_height="wrap_content">
 
             <ImageView
-                android:layout_width="120dp"
-                android:layout_height="120dp"
                 android:id="@+id/imageView2"
+                android:layout_width="250dp"
+                android:layout_height="124dp"
+                android:layout_centerHorizontal="true"
                 android:layout_marginTop="40dp"
-                android:src="@drawable/ic_person_red"
-                android:layout_centerHorizontal="true" />
+                android:src="@drawable/donor_icon" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -134,15 +133,15 @@
                 android:layout_marginTop="10dp" />
 
             <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:id="@+id/imageButton"
-                android:src="@drawable/call_btn"
+                android:layout_width="181dp"
+                android:layout_height="51dp"
                 android:layout_below="@+id/addr"
                 android:layout_centerHorizontal="true"
+                android:layout_marginTop="8dp"
                 android:background="@color/colorWhite"
-                android:layout_marginTop="20dp"
-                android:onClick="call"/>
+                android:onClick="call"
+                android:src="@drawable/call_btn_green" />
 
         </RelativeLayout>
 

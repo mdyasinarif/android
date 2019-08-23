@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.net.Uri;
+//import android.support.v4.app.ActivityCompat;
+//import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -16,16 +18,17 @@ public class DetailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
+
         int id = getIntent().getIntExtra("Id", 0);
         data = dbHelper.getDonerDetail(this, id);
 
-        TextView name = (TextView) findViewById(R.id.name);
-        TextView bloodgrp = (TextView) findViewById(R.id.bloodgrp);
-        TextView phone = (TextView) findViewById(R.id.phone);
-        TextView email = (TextView) findViewById(R.id.email);
-        TextView city = (TextView) findViewById(R.id.city);
-        TextView area = (TextView) findViewById(R.id.area);
-        TextView addr = (TextView) findViewById(R.id.addr);
+        TextView name =  findViewById(R.id.name);
+        TextView bloodgrp =  findViewById(R.id.bloodgrp);
+        TextView phone =  findViewById(R.id.phone);
+        TextView email = findViewById(R.id.email);
+        TextView city =  findViewById(R.id.city);
+        TextView area =  findViewById(R.id.area);
+        TextView addr =  findViewById(R.id.addr);
 
         name.setText(data.full_name);
         bloodgrp.setText(bloodgrp.getText() + data.bloodgrp);

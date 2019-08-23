@@ -1,18 +1,19 @@
 package com.yasin.bloodbank;
 
 import androidx.appcompat.app.AppCompatActivity;
-
+//import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
+import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-public class DonateActivity extends AppCompatActivity {
+public class DonateActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     String TAG = "DonateActivity";
     ArrayAdapter<CharSequence> Blood_List;
     ArrayAdapter<CharSequence> City_List;
@@ -27,14 +28,14 @@ public class DonateActivity extends AppCompatActivity {
 
         Blood_List = ArrayAdapter.createFromResource(this,R.array.bg_arrays, android.R.layout.select_dialog_item);
         City_List = ArrayAdapter.createFromResource(this,R.array.city_arrays, android.R.layout.select_dialog_item);
-        Area_List = ArrayAdapter.createFromResource(this, R.array.agra_arrays, android.R.layout.select_dialog_item);
+        Area_List = ArrayAdapter.createFromResource(this, R.array.barishal_arrays, android.R.layout.select_dialog_item);
 
-        Spinner spinner_blood = (Spinner)findViewById(R.id.spinner_bloodgrp);
-        Spinner spinner_city = (Spinner)findViewById(R.id.spinner_city);
-        Spinner spinner_area = (Spinner)findViewById(R.id.spinner_area);
+        Spinner spinner_blood = findViewById(R.id.spinner_bloodgrp);
+        Spinner spinner_city = findViewById(R.id.spinner_city);
+        Spinner spinner_area = findViewById(R.id.spinner_area);
 
         spinner_city.setAdapter(City_List);
-       // spinner_city.setOnItemSelectedListener(this);
+        spinner_city.setOnItemSelectedListener(this);
         City_List.getItem(0).toString();
 
         spinner_blood.setAdapter(Blood_List);
@@ -43,7 +44,7 @@ public class DonateActivity extends AppCompatActivity {
         spinner_area.setAdapter(Area_List);
         Area_List.getItem(0).toString();
     }
-
+    @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         String city = City_List.getItem(position).toString();
         updateAreaSpinner(city);
@@ -54,61 +55,41 @@ public class DonateActivity extends AppCompatActivity {
 
         int aid = 0;
 
-        if(city.equals("Agra"))
+        if(city.equals("Barishal"))
         {
-            aid = R.array.agra_arrays;
+            aid = R.array.barishal_arrays;
         }
-        else if(city.equals("Vadodara"))
+        else if(city.equals("Chattogram"))
         {
-            aid = R.array.Vadodara_arrays;
+            aid = R.array.chattogram_arrays;
         }
-        else if(city.equals("Bhopal"))
+        else if(city.equals("Dhaka"))
         {
-            aid = R.array.bpl_arrays;
+            aid = R.array.dhaka_arrays;
         }
-        else if(city.equals("Chennai"))
+        else if(city.equals("Khulna"))
         {
-            aid = R.array.chennai_arrays;
+            aid = R.array.khulna_arrays;
         }
-        else if(city.equals("Delhi"))
+        else if(city.equals("Rajshahi"))
         {
-            aid = R.array.delhi_arrays;
+            aid = R.array.rajshahi_arrays;
         }
-        else if(city.equals("Dewas"))
+        else if(city.equals("Rangpur"))
         {
-            aid = R.array.Dewas_arrays;
+            aid = R.array.rangpur_arrays;
         }
-        else if(city.equals("Faridabad"))
+        else if(city.equals("Sylhet"))
         {
-            aid = R.array.faridabad_arrays;
+            aid = R.array.sylhet_arrays;
         }
-        else if(city.equals("Goa"))
+        else if(city.equals("Mymensingh"))
         {
-            aid = R.array.goa_arrays;
-        }
-        else if(city.equals("Hyderabad"))
-        {
-            aid = R.array.hyderabad_arrays;
-        }
-        else if(city.equals("Indore"))
-        {
-            aid = R.array.indore_arrays;
-        }
-        else if(city.equals("Khargone"))
-        {
-            aid = R.array.khargone_arrays;
-        }
-        else if(city.equals("Khandwa"))
-        {
-            aid = R.array.khandwa_arrays;
-        }
-        else if(city.equals("Ujjain"))
-        {
-            aid = R.array.ujjain_arrays;
+            aid = R.array.mymensingh_arrays;
         }
 
         Area_List = ArrayAdapter.createFromResource(this, aid , android.R.layout.select_dialog_item);
-        Spinner spinner_area = (Spinner)findViewById(R.id.spinner_area);
+        Spinner spinner_area = findViewById(R.id.spinner_area);
         spinner_area.setAdapter(Area_List);
 
     }
@@ -140,7 +121,7 @@ public class DonateActivity extends AppCompatActivity {
             msg = "Invalid E-mail address.";
             Toast.makeText(this,msg,Toast.LENGTH_LONG).show();
         }
-        else if( donerData.phone.length()<10)
+        else if( donerData.phone.length()<11)
         {
             msg = "Invalid Phone number.";
             Toast.makeText(this,msg,Toast.LENGTH_LONG).show();
@@ -157,7 +138,7 @@ public class DonateActivity extends AppCompatActivity {
 
     }
 
-
+    @Override
     public void onNothingSelected(AdapterView<?> parent) {
 
     }
