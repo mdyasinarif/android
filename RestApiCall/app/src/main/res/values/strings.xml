@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">RestApiCall</string>
+    <string name="title_activity_basic">BasicActivity</string>
+
+    <string name="id_lable">ID</string>
+    <string name="content_lable">Content</string>
+
+    <string name="id_value">ID</string>
+    <string name="content_value">Content</string>
+
+</resources>
