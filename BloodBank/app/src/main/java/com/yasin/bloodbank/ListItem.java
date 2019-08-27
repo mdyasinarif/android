@@ -22,6 +22,7 @@ public class ListItem extends Fragment {
         if (getArguments() != null) {
             donerData.id = getArguments().getInt("Id");
             donerData.full_name = getArguments().getString("Name");
+            donerData.addr = getArguments().getString("Address");
             donerData.city = getArguments().getString("City");
             donerData.area = getArguments().getString("Area");
         }
@@ -37,11 +38,11 @@ public class ListItem extends Fragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        TextView name  = (TextView) view.findViewById(R.id.name);
-        TextView location  = (TextView) view.findViewById(R.id.location);
+        TextView name  =  view.findViewById(R.id.name);
+        TextView location  =  view.findViewById(R.id.location);
 
         name.setText(donerData.full_name);
-        location.setText(donerData.city+", "+donerData.area);
+        location.setText(donerData.addr +", "+donerData.city+", "+donerData.area);
 
         view.setOnClickListener(new View.OnClickListener() {
             @Override
