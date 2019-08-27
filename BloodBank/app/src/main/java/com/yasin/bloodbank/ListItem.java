@@ -22,7 +22,7 @@ public class ListItem extends Fragment {
         if (getArguments() != null) {
             donerData.id = getArguments().getInt("Id");
             donerData.full_name = getArguments().getString("Name");
-            donerData.addr = getArguments().getString("Address");
+            donerData.addr = getArguments().getString("Addr");
             donerData.city = getArguments().getString("City");
             donerData.area = getArguments().getString("Area");
         }

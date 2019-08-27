@@ -76,6 +76,7 @@ public class dbHelper extends SQLiteOpenHelper {
         String[] projection = {
                 "ID",
                 "Name",
+                "Addr",
                 "City",
                 "Area"
         };
@@ -104,6 +105,7 @@ public class dbHelper extends SQLiteOpenHelper {
                 DonerData d = new DonerData();
                 d.id = c.getInt(c.getColumnIndexOrThrow("Id"));
                 d.full_name = c.getString(c.getColumnIndexOrThrow("Name"));
+               d.addr = c.getString(c.getColumnIndexOrThrow("Addr"));
                 d.city = c.getString(c.getColumnIndexOrThrow("City"));
                 d.area = c.getString(c.getColumnIndexOrThrow("Area"));
 

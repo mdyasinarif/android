@@ -28,6 +28,7 @@ public class DonerListActivity extends AppCompatActivity {
             Bundle b = new Bundle();
             b.putInt("Id",d.id);
             b.putString("Name",d.full_name);
+            b.putString("Addr",d.addr);
             b.putString("City",d.city);
             b.putString("Area",d.area);
             listitem.setArguments(b);
